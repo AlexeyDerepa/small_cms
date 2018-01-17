@@ -3,8 +3,8 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createLogger } from 'redux-logger';
 
-import cellsReducer from './components/cell/reducers/cell';
-import detailsReducer from './components/details/reducers/details';
+import cellsReducer from './reducers/cell';
+import detailsReducer from './reducers/details';
 
 const middleware = [
     thunk,

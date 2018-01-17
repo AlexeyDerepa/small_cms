@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { cellUpdated } from './actions/details';
+import { cellUpdated } from '../../actions/details';
 
 class CellDetails extends Component {
     constructor(props) {
@@ -19,8 +19,8 @@ class CellDetails extends Component {
 
     handlerChange = (event) => {
         this.setState({[event.target.name]:event.target.value})
-    }
-    render = () => 
+    } 
+    render = () =>  
     this.props.isActive?
     <div>
         <div>

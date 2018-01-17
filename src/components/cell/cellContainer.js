@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addNewCell, cellSelected, deleteCell } from './actions/cell';
+import { addNewCell, cellSelected, deleteCell } from '../../actions/cell';
 
 
 import CellList from './cellList';

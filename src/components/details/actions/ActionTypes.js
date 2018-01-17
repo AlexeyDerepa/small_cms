@@ -1,2 +1,0 @@
-export const CELL_UPDATED = 'CELL_UPDATED';
-export const CELL_SELECTED = 'CELL_SELECTED';
