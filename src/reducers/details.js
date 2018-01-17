@@ -24,11 +24,11 @@ function detailsReducer(state = initialState, action) {
         }
 
         case types.CELL_UPDATED:
-        return updateObject(state, {
-            cell: newCell,
-            isActive: false,
-
-        })
+        case types.DELETE_CELL:
+            return updateObject(state, {
+                cell: newCell,
+                isActive: false,
+            })
 
         default:
             return state;

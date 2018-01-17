@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import CellItem from './cellItem';
+import CellItem from '../CellItem';
 
 class CellList extends Component {
 

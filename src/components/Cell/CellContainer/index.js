@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 
-import { addNewCell, cellSelected, deleteCell } from '../../actions/cell';
+import { addNewCell, cellSelected, deleteCell } from '../../../actions/cell';
 
 
-import CellList from './cellList';
+import CellList from '../CellList';
 
 class CellContainer extends Component {
 
@@ -20,14 +20,16 @@ class CellContainer extends Component {
         this.props.cellSelected(cell);
     }
 
-    render = () => <div>
-        <CellList
-            cells={this.props.cells}
-            handlerChooseCell={this.handlerChooseCell}
-            handlerDeleteCell={this.handlerDeleteCell}
-        />
-        <input type='button' value='new cell' onClick={this.handlerCreateNewCell} />
-    </div>;
+    render = () => (
+        <Fragment>
+            <CellList
+                cells={this.props.cells}
+                handlerChooseCell={this.handlerChooseCell}
+                handlerDeleteCell={this.handlerDeleteCell}
+            />
+            <input type='button' value='new cell' onClick={this.handlerCreateNewCell} />
+        </Fragment>
+    )
 }
 
 const mapStateToProps = (state) => ({

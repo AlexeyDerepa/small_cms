@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 
-import CellContainer from '../components/cell/cellContainer';
-import CellDetails from '../components/details/cellDetails';
+import CellContainer from '../components/Cell/CellContainer';
+import CellDetails from '../components/Details';
 
 class MainPage extends Component {
     render() {
