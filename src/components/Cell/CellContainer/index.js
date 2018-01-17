@@ -1,37 +1,43 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { addNewCell, cellSelected, deleteCell } from '../../../actions/cell';
 
 
 import CellList from '../CellList';
 
-class CellContainer extends Component {
+const CellContainer = ({cells, addNewCell, deleteCell, cellSelected}) =>{
 
-    handlerCreateNewCell = () => {
-        this.props.addNewCell();
+    const handlerCreateNewCell = () => {
+        addNewCell();
     }
 
-    handlerDeleteCell = (cell) => {
-        return () => this.props.deleteCell(cell);
+    const handlerDeleteCell = (cell) => {
+        return () => deleteCell(cell);
     }
 
-    handlerChooseCell = (cell) => {
-        return () => this.props.cellSelected(cell);
+    const handlerChooseCell = (cell) => {
+        return () => cellSelected(cell);
     }
 
-    render = () => (
+    return (
         <Fragment>
             <CellList
-                cells={this.props.cells}
-                handlerChooseCell={this.handlerChooseCell}
-                handlerDeleteCell={this.handlerDeleteCell}
+                cells={cells}
+                handlerChooseCell={handlerChooseCell}
+                handlerDeleteCell={handlerDeleteCell}
             />
-            <input type='button' value='new cell' onClick={this.handlerCreateNewCell} />
+            <input type='button' value='new cell' onClick={handlerCreateNewCell} />
         </Fragment>
     )
 }
-
+CellContainer.propTypes = {
+    cells: PropTypes.array,
+    addNewCell: PropTypes.func.isRequired,
+    deleteCell: PropTypes.func.isRequired,
+    cellSelected: PropTypes.func.isRequired
+  }
 const mapStateToProps = (state) => ({
     cells: state.cellsReducer.cells,
 });
