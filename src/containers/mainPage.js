@@ -1,4 +1,5 @@
 import React, {Component, Fragment} from 'react';
+import '../assets/styles/App.scss';
 
 import CellContainer from '../components/Cell/CellContainer';
 import CellDetails from '../components/Details';

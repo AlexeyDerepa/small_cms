@@ -10,13 +10,11 @@ import CMS from './mainPage'
 const Start = () => (
   <Router>
     <div>
-      <ul>
+      <ul className="navigation-list">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/cms">CMS</Link></li>
       </ul>
-
-      <hr/>
 
       <Route exact path="/" component={Home}/>
       <Route path="/about" component={About}/>

@@ -22,12 +22,16 @@ class CellDetails extends Component {
     } 
     render = () => (
         this.props.isActive ? (
-            <div>
-                <div>
-                    <input type='text' placeholder='Enter title of cell' name='title' onChange={this.handlerChange} value={this.state.title} />
-                    <input type='text' placeholder='Enter url of cell' name='url' onChange={this.handlerChange} value={this.state.url} />
+            <div className="popup">
+                <div className="form-holder">
+                    <div className="form-group">
+                        <input className="form-control" type='text' placeholder='Enter title of cell' name='title' onChange={this.handlerChange} value={this.state.title} />
+                    </div>
+                    <div className="form-group">
+                        <input className="form-control" type='text' placeholder='Enter url of cell' name='url' onChange={this.handlerChange} value={this.state.url} />
+                    </div>
+                    <button onClick={this.handlerUpdateCell} className="btn btn-primary">Save</button>
                 </div>
-                <input type='button' value='Save' onClick={this.handlerUpdateCell} />
             </div>
         ) : (
             null

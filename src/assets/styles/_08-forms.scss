@@ -1,0 +1,23 @@
+.form-holder {
+  background: $white;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: $white;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  transition: all ease .15s;
+}
+
+.form-group { margin-bottom: 15px; }

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import CellItem from '../CellItem';
@@ -16,11 +16,11 @@ const CellList = ({cells, handlerChooseCell, handlerDeleteCell}) => {
 
     return (
         !!cells.length ? (
-            <Fragment>
+            <div className="cell-list">
                 {list}
-            </Fragment>
+            </div>
         ) : (
-            <div>create new cell</div>
+            <div className="create-new-cell">Create new cell</div>
         )
     )
 }

@@ -1,0 +1,32 @@
+.btn {
+  color:  $white;
+  font: normal 10px/32px $defFont;
+  padding: 0 11px;
+  height: 33px;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all .1s ease;
+  text-transform: uppercase;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  white-space: nowrap;
+  touch-action: manipulation;
+  user-select: none;
+  min-width: 100px;
+}
+
+.btn-primary {
+  color: $white;
+  background-color: #0275d8;
+  border-color: #0275d8;
+
+  &:hover {
+    background-color: #025aa5;
+    border-color: #01549b;
+  }
+}

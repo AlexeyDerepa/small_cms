@@ -1,0 +1,52 @@
+$white: #fff;
+$black: #000;
+
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 320px;
+
+$defFont: 'Roboto', sans-serif;
+
+// breakpoints
+@mixin breakpoint($point) {
+  @if $point == 'desktop' {
+    @media only screen and (min-width: $breakpoint-desktop) {
+      @content;
+    }
+  }
+
+  @if $point == 'tablet' {
+    @media only screen and (min-width: $breakpoint-tablet) {
+      @content;
+    }
+  }
+
+  @if $point == 'mobile' {
+    @media only screen and (min-width: $breakpoint-mobile) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint_custom($point) {
+  @media only screen and (max-width: $point) {
+    @content;
+  }
+}
+
+
+//extra classes
+.pinout {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  padding: 20px;
+}
+
+.flex-center-xy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
