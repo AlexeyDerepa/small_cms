@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { cellUpdated } from '../../actions/details';
 
@@ -33,7 +34,11 @@ class CellDetails extends Component {
         )
     )
 }
-
+CellDetails.propTypes = {
+    cell: PropTypes.object.isRequired,
+    isActive: PropTypes.bool.isRequired,   
+  }
+  
 const mapStateToProps = (state) => ({
     cell: state.detailsReducer.cell,
     isActive:state.detailsReducer.isActive,
