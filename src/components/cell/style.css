@@ -1,0 +1,15 @@
+.main-cell-item-container{
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin: 5px;
+}
+.cell-item-container{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+}
+.delete-cell{
+    position: fixed;
+    left: 95px;
+}
