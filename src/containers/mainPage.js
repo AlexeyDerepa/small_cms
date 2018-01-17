@@ -9,7 +9,6 @@ class MainPage extends Component {
         <Fragment>
             <CellContainer/>
             <CellDetails/>
-            Yo
         </Fragment>
       );
     }
