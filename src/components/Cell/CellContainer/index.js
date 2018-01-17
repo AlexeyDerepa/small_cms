@@ -13,11 +13,11 @@ class CellContainer extends Component {
     }
 
     handlerDeleteCell = (cell) => {
-        this.props.deleteCell(cell);
+        return () => this.props.deleteCell(cell);
     }
 
     handlerChooseCell = (cell) => {
-        this.props.cellSelected(cell);
+        return () => this.props.cellSelected(cell);
     }
 
     render = () => (

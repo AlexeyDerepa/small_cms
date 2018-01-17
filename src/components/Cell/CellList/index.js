@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
 import CellItem from '../CellItem';
 
-class CellList extends Component {
+const CellList = (props) => {
 
-    eachCell = (cell) => {
-        return <CellItem key={cell.id} index={cell.id}
-        handlerChooseCell={this.props.handlerChooseCell}
-        handlerDeleteCell={this.props.handlerDeleteCell}
-
-        cell = {cell}              
+    const list = props.cells.map((cell) => (
+        <CellItem
+            key={cell.id}
+            handlerChooseCell={props.handlerChooseCell(cell)}
+            handlerDeleteCell={props.handlerDeleteCell(cell)}
+            cell = {cell}              
         />
-    }
+    ))
 
-  render =() => (this.props.cells !== undefined)
-                    ? <div>{this.props.cells.map(this.eachCell)}</div>
-                    : <div>create new cell</div>;
+    return (
+        !!props.cells.length ? (
+            <Fragment>
+                {list}
+            </Fragment>
+        ) : (
+            <div>create new cell</div>
+        )
+    )
 }
 
 export default CellList;
