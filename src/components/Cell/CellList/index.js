@@ -1,20 +1,21 @@
 import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
 
 import CellItem from '../CellItem';
 
-const CellList = (props) => {
+const CellList = ({cells, handlerChooseCell, handlerDeleteCell}) => {
 
-    const list = props.cells.map((cell) => (
+    const list = cells.map((cell) => (
         <CellItem
             key={cell.id}
-            handlerChooseCell={props.handlerChooseCell(cell)}
-            handlerDeleteCell={props.handlerDeleteCell(cell)}
+            handlerChooseCell={handlerChooseCell(cell)}
+            handlerDeleteCell={handlerDeleteCell(cell)}
             cell = {cell}              
         />
     ))
 
     return (
-        !!props.cells.length ? (
+        !!cells.length ? (
             <Fragment>
                 {list}
             </Fragment>
@@ -24,4 +25,9 @@ const CellList = (props) => {
     )
 }
 
+CellList.propTypes = {
+    cells: PropTypes.array,
+    handlerDeleteCell: PropTypes.func.isRequired,
+    handlerChooseCell: PropTypes.func.isRequired
+  }
 export default CellList;
