@@ -12,6 +12,9 @@ class CellDetails extends Component {
             url: ''
         }
     }
+    componentWillReceiveProps(nextProps){
+        this.setState({...nextProps.cell})
+    }
     handlerUpdateCell = (cell) => {
         this.props.cellUpdated(Object.assign({}, this.props.cell, {title:this.state.title, url:this.state.url}));
         this.setState({title: '', url: ''})
